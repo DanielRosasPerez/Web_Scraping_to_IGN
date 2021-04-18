@@ -37,7 +37,7 @@ class IGNcrawler(CrawlSpider):
     
     rules = (
         
-        # For following the TABS (Artículos, Reviews and Video):        
+        # For tracking the TABS (Artículos, Reviews and Video):        
         Rule(
             LinkExtractor(
                 allow = r"(type|model)=(article|video|review)&q=Xbox&order_by=(-date&page=\d+|-date)",
@@ -69,7 +69,7 @@ class IGNcrawler(CrawlSpider):
             ), follow = True, callback = "parse_videos"
         ),
         
-        # For following the PAGINATION:
+        # For tracking the PAGINATION:
         Rule(
             LinkExtractor(
                 allow = r"(type|model)=(article|video)&q=Xbox&order_by=-date&page=\d+",
